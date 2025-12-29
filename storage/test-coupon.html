@@ -1,0 +1,343 @@
+<html>
+<head>
+    <title>Coupon Image</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Poetsen+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', 'Inter', system-ui, sans-serif;
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .coupon-card {
+            background: white;
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            overflow: visible;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        /* Red Ribbon */
+        .ribbon {
+            position: absolute;
+            top: 35px;
+            right: -45px;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 10px 60px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transform: rotate(45deg);
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+            z-index: 10;
+            white-space: nowrap;
+        }
+
+        .left-section {
+            flex: 1;
+            min-width: 0;
+            padding: 25px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: visible;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand-logo {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: #dc2626;
+        }
+
+        .restaurant-type {
+            font-size: 14px;
+            font-weight: 500;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .campaign-name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1f2937;
+            line-height: 1.2;
+            margin-top: 10px;
+        }
+
+        .middle-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .info-row {
+            display: flex;
+            gap: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-icon {
+            width: 20px;
+            height: 20px;
+            color: #dc2626;
+        }
+
+        .info-label {
+            font-size: 12px;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .code-section {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border: 2px dashed #fca5a5;
+            border-radius: 12px;
+            padding: 15px 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .code-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #dc2626;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .coupon-code {
+            font-size: 20px;
+            font-weight: 700;
+            font-family: 'Figtree', 'Roboto', Arial, sans-serif;
+            color: #dc2626;
+            letter-spacing: 1px;
+            line-height: 1.3;
+            word-break: break-all;
+            overflow-wrap: break-word;
+            max-width: 100%;
+        }
+
+        .expires {
+            font-size: 14px;
+            color: #6b7280;
+            margin-top: 10px;
+        }
+
+        .expires span {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .right-section {
+            width: 280px;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        .right-section::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 25px;
+            height: 50px;
+            background: white;
+            border-radius: 0 25px 25px 0;
+        }
+
+        /* Decorative circles */
+        .right-section::after {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 20px;
+            bottom: 20px;
+            width: 24px;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 15px,
+                white 15px,
+                white 30px
+            );
+            border-radius: 12px;
+        }
+
+        .value-container {
+            text-align: center;
+        }
+
+        .save-label {
+            font-size: 18px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .value {
+            font-size: 64px;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+        }
+
+        .currency {
+            font-size: 32px;
+            vertical-align: top;
+        }
+
+        .discount-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .valid-period {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+        }
+
+        .valid-label {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .valid-date {
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="coupon-card">
+        <!-- Red Ribbon -->
+        <div class="ribbon">Special Offer</div>
+
+        <div class="left-section">
+            <div class="header">
+                <div class="brand">
+                                        <div class="brand-info">
+                        <span class="brand-text">Test Brand</span>
+                        <span class="restaurant-type">Restaurant</span>
+                    </div>
+                </div>
+                <div class="campaign-name">New Year</div>
+            </div>
+
+            <div class="middle-section">
+                <div class="info-row">
+                    <div class="info-item">
+                        <svg class="info-icon" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        <div>
+                            <div class="info-label">Opening Hours</div>
+                            <div class="info-value">9:00 AM - 10:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <svg class="info-icon" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                        </svg>
+                        <div>
+                            <div class="info-label">Close Date</div>
+                            <div class="info-value">Sunday</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-section">
+                <div class="code-label">Your Coupon Code</div>
+                <div class="coupon-code">WKYPBW8T</div>
+                <div class="expires">Valid until: <span>Dec 31, 2025</span></div>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="value-container">
+                <div class="save-label">Save</div>
+                <div class="value"><span class="currency">$</span>150</div>
+                <div class="discount-text">Discount</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
