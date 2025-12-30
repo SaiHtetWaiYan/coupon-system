@@ -1,0 +1,17 @@
+{
+    "_hash": "d7352368dffe2b8d04f28933488cbf9b072d1802983dd3bb308e0d7c076ad3a7",
+    "patches": {
+        "saasykit/laravel-open-graphy": [
+            {
+                "package": "saasykit/laravel-open-graphy",
+                "description": "Fix implicit nullable parameter deprecation",
+                "url": "patches/fix-open-graphy-nullable-params.patch",
+                "sha256": "e8978641ee93ed76cd05d9efb0d3715f707d2682ded9cad78ff3a028402b212e",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
+}
