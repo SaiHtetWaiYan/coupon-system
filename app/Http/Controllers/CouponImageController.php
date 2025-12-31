@@ -47,6 +47,8 @@ class CouponImageController extends Controller
         try {
             $browser = (new BrowserFactory(config('open-graphy.chrome_binary')))->createBrowser([
                 'windowSize' => [$imageWidth, $imageHeight],
+                'noSandbox' => true,
+                'ignoreCertificateErrors' => true,
             ]);
 
             $page = $browser->createPage();
@@ -106,6 +108,8 @@ class CouponImageController extends Controller
         try {
             $browser = (new BrowserFactory(config('open-graphy.chrome_binary')))->createBrowser([
                 'windowSize' => [$imageWidth, $imageHeight],
+                'noSandbox' => true,
+                'ignoreCertificateErrors' => true,
             ]);
 
             $page = $browser->createPage();
