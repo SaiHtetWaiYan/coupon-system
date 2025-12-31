@@ -2,7 +2,7 @@
 
 # =============================================================================
 # Server Setup Script for Laravel Coupon System
-# Ubuntu 24.04 LTS with PHP 8.3, MySQL 8, Nginx, Chromium
+# Ubuntu 24.04 LTS with PHP 8.4, MySQL 8, Nginx, Chromium
 # =============================================================================
 
 set -e
@@ -37,26 +37,26 @@ echo -e "${YELLOW}Adding PHP repository...${NC}"
 add-apt-repository ppa:ondrej/php -y
 apt update
 
-# Install PHP 8.3 and extensions
-echo -e "${YELLOW}Installing PHP 8.3 and extensions...${NC}"
+# Install PHP 8.4 and extensions
+echo -e "${YELLOW}Installing PHP 8.4 and extensions...${NC}"
 apt install -y \
-    php8.3-fpm \
-    php8.3-cli \
-    php8.3-common \
-    php8.3-mysql \
-    php8.3-pgsql \
-    php8.3-sqlite3 \
-    php8.3-xml \
-    php8.3-curl \
-    php8.3-gd \
-    php8.3-imagick \
-    php8.3-mbstring \
-    php8.3-zip \
-    php8.3-bcmath \
-    php8.3-intl \
-    php8.3-readline \
-    php8.3-soap \
-    php8.3-redis
+    php8.4-fpm \
+    php8.4-cli \
+    php8.4-common \
+    php8.4-mysql \
+    php8.4-pgsql \
+    php8.4-sqlite3 \
+    php8.4-xml \
+    php8.4-curl \
+    php8.4-gd \
+    php8.4-imagick \
+    php8.4-mbstring \
+    php8.4-zip \
+    php8.4-bcmath \
+    php8.4-intl \
+    php8.4-readline \
+    php8.4-soap \
+    php8.4-redis
 
 # Install Nginx
 echo -e "${YELLOW}Installing Nginx...${NC}"
@@ -94,7 +94,7 @@ cat > /etc/php/8.3/fpm/pool.d/www.conf << 'EOF'
 [www]
 user = www-data
 group = www-data
-listen = /run/php/php8.3-fpm.sock
+listen = /run/php/php8.4-fpm.sock
 listen.owner = www-data
 listen.group = www-data
 pm = dynamic
@@ -123,12 +123,12 @@ ufw --force enable
 
 # Restart services
 echo -e "${YELLOW}Restarting services...${NC}"
-systemctl restart php8.3-fpm
+systemctl restart php8.4-fpm
 systemctl restart nginx
 systemctl restart mysql
 
 # Enable services on boot
-systemctl enable php8.3-fpm
+systemctl enable php8.4-fpm
 systemctl enable nginx
 systemctl enable mysql
 
