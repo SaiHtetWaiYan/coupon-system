@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  PHP_VERSION: '8.3'
+  PHP_VERSION: '8.4'
   NODE_VERSION: '20'
 
 jobs:
@@ -131,7 +131,7 @@ jobs:
             php artisan storage:link --force
 
             # Restart services
-            sudo systemctl restart php8.3-fpm
+            sudo systemctl restart php8.4-fpm
             sudo systemctl restart nginx
 
             echo "Deployment completed successfully!"
