@@ -112,11 +112,11 @@ jobs:
             --exclude 'storage/framework/sessions/*' \
             --exclude 'storage/framework/views/*' \
             -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" \
-            ./ ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }}:/var/www/coupon-system/
+            ./ root@${{ secrets.SERVER_IP }}:/var/www/coupon-system/
 
       - name: Run deployment commands
         run: |
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} << 'ENDSSH'
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no root@${{ secrets.SERVER_IP }} << 'ENDSSH'
             cd /var/www/coupon-system
 
             # Set proper permissions
