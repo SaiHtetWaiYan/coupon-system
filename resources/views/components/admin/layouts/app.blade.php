@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full overflow-x-hidden">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,16 +18,16 @@
             }
         </script>
     </head>
-    <body class="h-full font-sans antialiased bg-gray-100 dark:bg-gray-900">
+    <body class="h-full overflow-x-hidden font-sans antialiased bg-gray-100 dark:bg-gray-900">
         <div class="min-h-full">
             <div class="flex">
                 @include('admin.components.sidebar')
 
-                <div class="flex-1 lg:pl-64">
+                <div class="min-w-0 flex-1 lg:pl-64">
                     @include('admin.components.header')
 
                     <main class="py-8">
-                        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                        <div class="mx-auto max-w-7xl overflow-hidden px-4 sm:px-6 lg:px-8">
                             @include('admin.components.flash-message')
 
                             {{ $slot }}

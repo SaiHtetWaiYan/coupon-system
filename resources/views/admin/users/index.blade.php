@@ -15,8 +15,9 @@
             </div>
         </div>
 
-        <div class="overflow-hidden rounded-lg bg-white shadow dark:bg-gray-800">
-            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+        <div class="rounded-lg bg-white shadow dark:bg-gray-800">
+            <div class="w-full overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                 <thead class="bg-gray-50 dark:bg-gray-700">
                     <tr>
                         <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-6">User</th>
@@ -96,7 +97,8 @@
                         </tr>
                     @endforelse
                 </tbody>
-            </table>
+                </table>
+            </div>
         </div>
 
         <div class="mt-4">
